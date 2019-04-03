@@ -13,7 +13,7 @@ package lol.kent.practice.java.pattern.listener;
  * @version x.x.x
  * @see <a href="https://www.cnblogs.com/jenkov/p/listener_in_java.html"></a>
  */
-public class ListenerApplication {
+public class Bootstrap {
 
     public static void main(String[] args) {
         AuthenticationManager manager = new AuthenticationManager();
