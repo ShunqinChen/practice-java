@@ -16,8 +16,14 @@ import java.util.Observable;
  */
 public class AuthenticationManager extends Observable {
 
+    private Authentication authentication;
+
+    public Authentication getAuthentication() {
+        return authentication;
+    }
 
     public void authenticate(Authentication authentication) {
+        this.authentication = authentication;
         setChanged();
         notifyObservers();
     }

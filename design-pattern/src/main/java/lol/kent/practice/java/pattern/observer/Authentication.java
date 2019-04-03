@@ -18,6 +18,11 @@ public class Authentication {
 
     private String password;
 
+    public Authentication(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+    }
+
     public String getUserName() {
         return userName;
     }

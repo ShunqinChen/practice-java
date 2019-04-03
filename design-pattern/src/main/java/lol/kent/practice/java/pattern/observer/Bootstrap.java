@@ -15,7 +15,16 @@ package lol.kent.practice.java.pattern.observer;
 public class Bootstrap {
 
     public static void main(String[] args) {
+        AuthenticationManager manager = new AuthenticationManager();
+        AuthenticationProvider authenticationProvider = new AuthenticationProvider(manager);
+        AuthorizationProvider authorizationProvider = new AuthorizationProvider(manager);
 
+
+        Authentication authentication = new Authentication("Kent","password");
+        manager.authenticate(authentication);
+        // 删除观察者后，观察者将收不到活动通知
+        manager.deleteObserver(authenticationProvider);
+        manager.authenticate(new Authentication("Bob", "123456"));
     }
 
 }
