@@ -1,4 +1,4 @@
-package lol.kent.java.pattern.observer;
+package lol.kent.practice.pattern.observer;
 
 import java.util.Observable;
 import java.util.Observer;

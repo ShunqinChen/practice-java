@@ -1,4 +1,4 @@
-package lol.kent.java.pattern.listener;
+package lol.kent.practice.pattern.listener;
 
 /**
  * 标题、简要说明. <br>
