@@ -1,4 +1,4 @@
-package lol.kent.practice.java.pattern.listener;
+package lol.kent.java.pattern.listener;
 
 import com.google.common.collect.Lists;
 

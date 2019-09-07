@@ -1,4 +1,4 @@
-package lol.kent.practice.java.pattern.observer;
+package lol.kent.java.pattern.observer;
 
 /**
  * 标题、简要说明. <br>

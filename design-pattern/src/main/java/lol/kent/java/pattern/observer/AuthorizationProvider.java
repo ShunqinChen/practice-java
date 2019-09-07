@@ -1,4 +1,4 @@
-package lol.kent.practice.java.pattern.observer;
+package lol.kent.java.pattern.observer;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -15,19 +15,18 @@ import java.util.Observer;
  * @author Shunqin.Chen
  * @version x.x.x
  */
-public class AuthenticationProvider implements Observer {
+public class AuthorizationProvider implements Observer {
 
-    public AuthenticationProvider(AuthenticationManager manager) {
+    public AuthorizationProvider(AuthenticationManager manager) {
         super();
         manager.addObserver(this::update);
     }
-
     @Override
     public void update(Observable o, Object arg) {
-        authorization(((AuthenticationManager) o).getAuthentication());
+        authentication(((AuthenticationManager) o).getAuthentication());
     }
 
-    public void authorization(Authentication authentication) {
-        System.out.println("Authorization :".concat(authentication.getUserName()));
+    public void authentication(Authentication authentication) {
+        System.out.println("Authentication:"+authentication.getUserName());
     }
 }
