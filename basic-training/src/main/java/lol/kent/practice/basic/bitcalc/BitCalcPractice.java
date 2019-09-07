@@ -1,4 +1,4 @@
-package lol.kent.java.basic.bitcalc;
+package lol.kent.practice.basic.bitcalc;
 
 /**
  * 标题、简要说明. <br>
