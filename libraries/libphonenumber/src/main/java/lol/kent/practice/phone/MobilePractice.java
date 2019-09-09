@@ -45,6 +45,7 @@ public class MobilePractice {
 
         logger.info("Phone Number Type:{}", phoneUtil.getNumberType(phonenumber));
 
+
     }
 
 }
