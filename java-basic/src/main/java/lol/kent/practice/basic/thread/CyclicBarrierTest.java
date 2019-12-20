@@ -44,7 +44,6 @@ public class CyclicBarrierTest {
             System.out.println(this.barrier.getNumberWaiting());
         }
 
-        @Override
         public void run() {
             String messageFormat = "[%s] - [%s]";
             String threadName = Thread.currentThread().getName();
