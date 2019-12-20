@@ -21,12 +21,12 @@ import java.util.concurrent.CyclicBarrier;
  */
 public class CyclicBarrierTest {
 
-    public static final int times = 10;
+    public static final int TIMES = 10;
 
     public static void main(String[] args) throws InterruptedException {
 
-        CyclicBarrier cyclicBarrier = new CyclicBarrier(times);
-        for (int i = 0; i < times; i++) {
+        CyclicBarrier cyclicBarrier = new CyclicBarrier(TIMES);
+        for (int i = 0; i < TIMES; i++) {
             Thread.sleep(1000);
             Thread thread = new Thread(new PrintThread(cyclicBarrier), "Thread-" + i);
             thread.start();

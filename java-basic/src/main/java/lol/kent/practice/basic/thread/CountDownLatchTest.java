@@ -19,12 +19,12 @@ import java.util.concurrent.CountDownLatch;
  */
 public class CountDownLatchTest {
 
-    public static final int times = 10;
+    public static final int TIMES = 10;
 
     public static void main(String[] args) throws InterruptedException {
 
-        CountDownLatch latch = new CountDownLatch(times);
-        for (int i = 0; i < times; i++) {
+        CountDownLatch latch = new CountDownLatch(TIMES);
+        for (int i = 0; i < TIMES; i++) {
             Thread.sleep(1000);
             PrintThread t = new PrintThread("Thread-" + i, latch);
             t.start();
