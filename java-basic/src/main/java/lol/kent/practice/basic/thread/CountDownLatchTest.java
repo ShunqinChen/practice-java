@@ -1,6 +1,7 @@
 package lol.kent.practice.basic.thread;
 
 import java.util.concurrent.CountDownLatch;
+import org.joda.time.DateTime;
 
 /**
  * <pre>
@@ -47,8 +48,9 @@ public class CountDownLatchTest {
         public void run() {
             String messageFormat = "[%s] - [%s] ";
             String threadName = Thread.currentThread().getName();
-            String message = String.format(messageFormat, threadName, System.currentTimeMillis());
+            String time = new DateTime().toString("yyyy-MM-dd HH:mm:ss.SSS");
 
+            String message = String.format(messageFormat, threadName, time);
             System.out.println(message + "ready......");
             this.countDownLatch.countDown();
             System.out.println(message + "stated......");

@@ -2,6 +2,7 @@ package lol.kent.practice.basic.thread;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import org.joda.time.DateTime;
 
 /**
  * <pre>
@@ -31,7 +32,6 @@ public class CyclicBarrierTest {
             Thread thread = new Thread(new PrintThread(cyclicBarrier), "Thread-" + i);
             thread.start();
         }
-
         System.out.println("end");
     }
 
@@ -44,10 +44,13 @@ public class CyclicBarrierTest {
             System.out.println(this.barrier.getNumberWaiting());
         }
 
+        @Override
         public void run() {
-            String messageFormat = "[%s] - [%s]";
+            String messageFormat = "[%s] - [%s] ";
             String threadName = Thread.currentThread().getName();
-            String message = String.format(messageFormat, threadName, System.currentTimeMillis());
+            String time = new DateTime().toString("yyyy-MM-dd HH:mm:ss.SSS");
+
+            String message = String.format(messageFormat, threadName, time);
 
             System.out.println(message + " is ready...");
             // 这里最后一个会直接执行,因为线程已经齐了
