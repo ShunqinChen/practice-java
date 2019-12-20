@@ -6,6 +6,8 @@ import java.util.concurrent.CyclicBarrier;
 /**
  * <pre>
  *    类描述: 线程栅栏CyclicBarrier测试
+ *       CyclicBarrier: 工作机制
+ *          启动 n 个线程，与栅栏阀值一致，即当线程准备数达到要求时，栅栏刚好开启，从而达到统一控制效果
  * </pre>
  * <p>
  * Copyright: Copyright (c) 2019年12月20日 15:31
@@ -39,6 +41,7 @@ public class CyclicBarrierTest {
 
         public PrintThread(CyclicBarrier barrier) {
             this.barrier = barrier;
+            System.out.println(this.barrier.getNumberWaiting());
         }
 
         @Override
@@ -48,6 +51,7 @@ public class CyclicBarrierTest {
             String message = String.format(messageFormat, threadName, System.currentTimeMillis());
 
             System.out.println(message + " is ready...");
+            // 这里最后一个会直接执行,因为线程已经齐了
             try {
                 barrier.await();
             } catch (InterruptedException e) {
