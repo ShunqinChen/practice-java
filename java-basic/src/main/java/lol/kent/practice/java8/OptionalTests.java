@@ -18,6 +18,9 @@ import java.util.Optional;
 public class OptionalTests {
 
     public static void main(String[] args) {
+
+        long corpId = 46L;
+        System.out.println(corpId == 46L);
         Optional<String> none = Optional.ofNullable(null);
         none.orElseThrow(() -> new RuntimeException("测试null值抛出异常"));
 
