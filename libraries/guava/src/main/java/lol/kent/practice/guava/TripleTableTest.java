@@ -1,4 +1,4 @@
-package lol.kent.practice.guava.table;
+package lol.kent.practice.guava;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
