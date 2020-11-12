@@ -1,7 +1,5 @@
 package lol.kent.practice.beans;
 
-import java.util.List;
-import lol.kent.practice.entity.Address;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,5 +28,11 @@ public class UserDTO {
 
     private String time;
 
-    private List<Address> addresses;
+    private String province;
+
+    private String city;
+
+    private String area;
+
+    private String gender;
 }

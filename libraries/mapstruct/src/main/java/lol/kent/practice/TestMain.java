@@ -1,6 +1,7 @@
 package lol.kent.practice;
 
-import java.util.Arrays;
+import static lol.kent.practice.enums.GenderEnum.MALE;
+
 import java.util.Date;
 import lol.kent.practice.beans.UserDTO;
 import lol.kent.practice.entity.Address;
@@ -30,12 +31,15 @@ public class TestMain {
         User i = User.builder()
                 .createdAt(new Date())
                 .name("Kent")
-                .addresses(Arrays.asList(address))
+                .address(address)
+                .gender(MALE)
                 .build();
         UserBeanMapper beanMapper = UserBeanMapper.instance;
         UserDTO userDTO = beanMapper.user2userDTO(i);
-        System.out.println(userDTO.getTime());
+        System.out.println(userDTO);
         System.out.println(userDTO.getName());
-        System.out.println(userDTO.getAddresses());
+        System.out.println(userDTO.getProvince());
+        System.out.println(userDTO.getCity());
+        System.out.println(userDTO.getArea());
     }
 }

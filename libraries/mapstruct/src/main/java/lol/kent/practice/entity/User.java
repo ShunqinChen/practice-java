@@ -1,7 +1,7 @@
 package lol.kent.practice.entity;
 
 import java.util.Date;
-import java.util.List;
+import lol.kent.practice.enums.GenderEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -30,5 +30,7 @@ public class User {
 
     private Date createdAt;
 
-    private List<Address> addresses;
+    private Address address;
+
+    private GenderEnum gender;
 }

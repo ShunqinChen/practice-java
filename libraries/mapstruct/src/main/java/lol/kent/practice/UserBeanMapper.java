@@ -25,6 +25,8 @@ public interface UserBeanMapper {
     UserBeanMapper instance = Mappers.getMapper(UserBeanMapper.class);
 
     @Mapping(source = "createdAt", target = "time", dateFormat = "yyyy-MM-dd HH:mm:ss")
-    @Mapping(source = "addresses", target = "addresses")
+    @Mapping(source = "address.province", target = "province")
+    @Mapping(source = "address.city", target = "city")
+    @Mapping(source = "address.district", target = "area")
     UserDTO user2userDTO(User user);
 }
