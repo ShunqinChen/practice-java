@@ -20,5 +20,7 @@ public class EventSubscriber {
     @Subscribe
     public void listen(EventMessage message) {
         System.out.println("时间处理中:" + message.getSourceId() + "," + message.getCount());
+        throw new IllegalArgumentException("param verify error");
     }
+
 }
