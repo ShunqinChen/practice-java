@@ -36,8 +36,8 @@ public class BiMapTest {
         idNameBiMap.forcePut(104L, "Sam");
         System.out.println(idNameBiMap.get(100L));
 
-        idNameBiMap.computeIfAbsent(100L, aLong -> "Nancy to " + aLong);
-        System.out.println(idNameBiMap.get(100L));
+        idNameBiMap.computeIfAbsent(102L, aLong -> "Nancy to " + aLong);
+        System.out.println(idNameBiMap.get(102L));
 
     }
 
