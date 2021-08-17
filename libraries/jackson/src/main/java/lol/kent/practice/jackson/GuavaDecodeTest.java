@@ -6,6 +6,7 @@ import com.fasterxml.jackson.datatype.guava.GuavaModule;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import lol.kent.practice.jackson.bean.DemoTableBean;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Before;
 import org.junit.Test;
@@ -63,6 +64,11 @@ public class GuavaDecodeTest {
         System.out.println(ret);
     }
 
+    /**
+     * 结论: 没有找到合适的TABLE DECODE方法, Jackson做了encode,但是decode好像没有找到很稳定的实现
+     *
+     * @throws JsonProcessingException .
+     */
     @Test
     public void testDecodeStr() throws JsonProcessingException {
         String input = "{\"param\":{\"18959678966\":{\"SMS123485906\":{\"name\":\"Kent\",\"age\":\"30\"}},\"15859237640\":{\"SMS123485906\":{\"name\":\"Bob\",\"age\":\"29\"}}}}";

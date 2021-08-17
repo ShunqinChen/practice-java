@@ -1,4 +1,4 @@
-package lol.kent.practice.jackson;
+package lol.kent.practice.jackson.bean;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
+import lol.kent.practice.jackson.bean.AliyunSMSNotifyDTO;
 import org.junit.Assert;
 import org.junit.Test;
 

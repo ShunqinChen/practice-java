@@ -1,4 +1,4 @@
-package lol.kent.practice.jackson;
+package lol.kent.practice.jackson.bean;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
