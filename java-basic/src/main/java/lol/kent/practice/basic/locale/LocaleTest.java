@@ -36,6 +36,7 @@ public class LocaleTest {
         var localeFromStr = new Locale("", country);
         System.out.println("getCountry:" + localeFromStr.getCountry());
         System.out.println("getDisplayLanguage:" + localeFromStr.getDisplayLanguage());
+        // local的Language不同，即便country相同两个对象也不相等
         System.out.println("Locale equals result: " + Locale.CHINA.equals(localeFromStr));
         System.out.println("Country equals result: " + Locale.CHINA.getCountry().equals(localeFromStr.getCountry()));
 
