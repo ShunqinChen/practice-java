@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+//指定 Protobuf 包名，防止有相同类名的 message 定义，这个包名是生成的类中所用到的一些信息的前缀，并非类所在包。
+package cn.kents.java.proto;
+
+// 生成的类所在包。
+option java_package = "cn.kents.java.proto";
+// 生成的类名，若无，自动使用文件名进行驼峰转换来为类命名。
+option java_outer_classname = "HelloProto";
+//是否生成多个文件。若 false，则只会生成一个类，其他类以内部类形式提供。
+option java_multiple_files = true;
+
+
+message Hello {
+
+  optional string name = 1;
+  repeated string mail = 2;
+}
