@@ -1,11 +1,12 @@
-package lol.kent.practice.jodatime;
+package cafe.kent.practice.jodatime;
 
 import com.google.common.collect.Lists;
-import java.util.List;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.ISODateTimeFormat;
+
+import java.util.List;
 
 /**
  * <pre>
@@ -54,6 +55,7 @@ public class Application {
         b = b.withYear(2023).withDayOfWeek(7).withWeekOfWeekyear(20);
         System.out.println(b);
 
+        System.out.println("" + DateTime.now().withHourOfDay(0).withSecondOfMinute(0).toString("yyyy-MM-dd HH:mm:ss"));
     }
 
 }

@@ -1,10 +1,12 @@
-package lol.kent.practice.jodatime;
+package cafe.kent.practice.jodatime;
+
+import org.joda.time.DateTime;
+import org.joda.time.DateTimeFieldType;
+import org.joda.time.LocalDateTime;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import org.joda.time.DateTime;
-import org.joda.time.LocalDateTime;
 
 /**
  * <pre>
@@ -27,8 +29,10 @@ public class FormatTest {
 
         System.out.println(time);
 
-        DateTime jodaTime = new DateTime(time);
+        DateTime jodaTime = new DateTime(new Date());
         System.out.println(jodaTime.toString("yyyy-MM-dd"));
+        System.out.println("今天星期:" + jodaTime.get(DateTimeFieldType.dayOfWeek()));
+        System.out.println(jodaTime.toDateTimeISO());
 
         sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         time = sf.parse("2019-10-10 12:10:15");
