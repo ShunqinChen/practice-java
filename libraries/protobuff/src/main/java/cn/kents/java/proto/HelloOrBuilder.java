@@ -23,4 +23,39 @@ public interface HelloOrBuilder extends
    */
   com.google.protobuf.ByteString
       getNameBytes();
+
+  /**
+   * <code>repeated string mail = 2;</code>
+   * @return A list containing the mail.
+   */
+  java.util.List<java.lang.String>
+      getMailList();
+  /**
+   * <code>repeated string mail = 2;</code>
+   * @return The count of mail.
+   */
+  int getMailCount();
+  /**
+   * <code>repeated string mail = 2;</code>
+   * @param index The index of the element to return.
+   * @return The mail at the given index.
+   */
+  java.lang.String getMail(int index);
+  /**
+   * <code>repeated string mail = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the mail at the given index.
+   */
+  com.google.protobuf.ByteString
+      getMailBytes(int index);
+
+  /**
+   * <pre>
+   *测试嵌套其他proto但是是泛型的情况，类似baseRequest中嵌套data对象
+   * </pre>
+   *
+   * <code>bytes data = 3;</code>
+   * @return The data.
+   */
+  com.google.protobuf.ByteString getData();
 }

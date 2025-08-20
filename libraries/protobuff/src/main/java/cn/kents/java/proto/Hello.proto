@@ -15,4 +15,6 @@ message Hello {
 
   optional string name = 1;
   repeated string mail = 2;
+  /*测试嵌套其他proto但是是泛型的情况，类似baseRequest中嵌套data对象*/
+  bytes data = 3;
 }

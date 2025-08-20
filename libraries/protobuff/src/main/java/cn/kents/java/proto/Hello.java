@@ -17,6 +17,8 @@ private static final long serialVersionUID = 0L;
   }
   private Hello() {
     name_ = "";
+    mail_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    data_ = com.google.protobuf.ByteString.EMPTY;
   }
 
   @java.lang.Override
@@ -56,6 +58,20 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+            if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+              mail_ = new com.google.protobuf.LazyStringArrayList();
+              mutable_bitField0_ |= 0x00000002;
+            }
+            mail_.add(s);
+            break;
+          }
+          case 26: {
+
+            data_ = input.readBytes();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -71,6 +87,9 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000002) != 0)) {
+        mail_ = mail_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -135,6 +154,56 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MAIL_FIELD_NUMBER = 2;
+  private com.google.protobuf.LazyStringList mail_;
+  /**
+   * <code>repeated string mail = 2;</code>
+   * @return A list containing the mail.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getMailList() {
+    return mail_;
+  }
+  /**
+   * <code>repeated string mail = 2;</code>
+   * @return The count of mail.
+   */
+  public int getMailCount() {
+    return mail_.size();
+  }
+  /**
+   * <code>repeated string mail = 2;</code>
+   * @param index The index of the element to return.
+   * @return The mail at the given index.
+   */
+  public java.lang.String getMail(int index) {
+    return mail_.get(index);
+  }
+  /**
+   * <code>repeated string mail = 2;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the mail at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getMailBytes(int index) {
+    return mail_.getByteString(index);
+  }
+
+  public static final int DATA_FIELD_NUMBER = 3;
+  private com.google.protobuf.ByteString data_;
+  /**
+   * <pre>
+   *测试嵌套其他proto但是是泛型的情况，类似baseRequest中嵌套data对象
+   * </pre>
+   *
+   * <code>bytes data = 3;</code>
+   * @return The data.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getData() {
+    return data_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -152,6 +221,12 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    for (int i = 0; i < mail_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mail_.getRaw(i));
+    }
+    if (!data_.isEmpty()) {
+      output.writeBytes(3, data_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -163,6 +238,18 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < mail_.size(); i++) {
+        dataSize += computeStringSizeNoTag(mail_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getMailList().size();
+    }
+    if (!data_.isEmpty()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBytesSize(3, data_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -184,6 +271,10 @@ private static final long serialVersionUID = 0L;
       if (!getName()
           .equals(other.getName())) return false;
     }
+    if (!getMailList()
+        .equals(other.getMailList())) return false;
+    if (!getData()
+        .equals(other.getData())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -199,6 +290,12 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
     }
+    if (getMailCount() > 0) {
+      hash = (37 * hash) + MAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getMailList().hashCode();
+    }
+    hash = (37 * hash) + DATA_FIELD_NUMBER;
+    hash = (53 * hash) + getData().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -334,6 +431,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
+      mail_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      data_ = com.google.protobuf.ByteString.EMPTY;
+
       return this;
     }
 
@@ -366,6 +467,12 @@ private static final long serialVersionUID = 0L;
         to_bitField0_ |= 0x00000001;
       }
       result.name_ = name_;
+      if (((bitField0_ & 0x00000002) != 0)) {
+        mail_ = mail_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000002);
+      }
+      result.mail_ = mail_;
+      result.data_ = data_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -419,6 +526,19 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000001;
         name_ = other.name_;
         onChanged();
+      }
+      if (!other.mail_.isEmpty()) {
+        if (mail_.isEmpty()) {
+          mail_ = other.mail_;
+          bitField0_ = (bitField0_ & ~0x00000002);
+        } else {
+          ensureMailIsMutable();
+          mail_.addAll(other.mail_);
+        }
+        onChanged();
+      }
+      if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
+        setData(other.getData());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -529,6 +649,162 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       bitField0_ |= 0x00000001;
       name_ = value;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringList mail_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private void ensureMailIsMutable() {
+      if (!((bitField0_ & 0x00000002) != 0)) {
+        mail_ = new com.google.protobuf.LazyStringArrayList(mail_);
+        bitField0_ |= 0x00000002;
+       }
+    }
+    /**
+     * <code>repeated string mail = 2;</code>
+     * @return A list containing the mail.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getMailList() {
+      return mail_.getUnmodifiableView();
+    }
+    /**
+     * <code>repeated string mail = 2;</code>
+     * @return The count of mail.
+     */
+    public int getMailCount() {
+      return mail_.size();
+    }
+    /**
+     * <code>repeated string mail = 2;</code>
+     * @param index The index of the element to return.
+     * @return The mail at the given index.
+     */
+    public java.lang.String getMail(int index) {
+      return mail_.get(index);
+    }
+    /**
+     * <code>repeated string mail = 2;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the mail at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getMailBytes(int index) {
+      return mail_.getByteString(index);
+    }
+    /**
+     * <code>repeated string mail = 2;</code>
+     * @param index The index to set the value at.
+     * @param value The mail to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMail(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMailIsMutable();
+      mail_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string mail = 2;</code>
+     * @param value The mail to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMail(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureMailIsMutable();
+      mail_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string mail = 2;</code>
+     * @param values The mail to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllMail(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureMailIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, mail_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string mail = 2;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearMail() {
+      mail_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string mail = 2;</code>
+     * @param value The bytes of the mail to add.
+     * @return This builder for chaining.
+     */
+    public Builder addMailBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureMailIsMutable();
+      mail_.add(value);
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     *测试嵌套其他proto但是是泛型的情况，类似baseRequest中嵌套data对象
+     * </pre>
+     *
+     * <code>bytes data = 3;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getData() {
+      return data_;
+    }
+    /**
+     * <pre>
+     *测试嵌套其他proto但是是泛型的情况，类似baseRequest中嵌套data对象
+     * </pre>
+     *
+     * <code>bytes data = 3;</code>
+     * @param value The data to set.
+     * @return This builder for chaining.
+     */
+    public Builder setData(com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      data_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     *测试嵌套其他proto但是是泛型的情况，类似baseRequest中嵌套data对象
+     * </pre>
+     *
+     * <code>bytes data = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearData() {
+      
+      data_ = getDefaultInstance().getData();
       onChanged();
       return this;
     }

@@ -29,9 +29,10 @@ public final class HelloProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\037cn/kents/java/proto/Hello.proto\022\023cn.ke" +
-      "nts.java.proto\"#\n\005Hello\022\021\n\004name\030\001 \001(\tH\000\210" +
-      "\001\001B\007\n\005_nameB#\n\023cn.kents.java.protoB\nHell" +
-      "oProtoP\001b\006proto3"
+      "nts.java.proto\"?\n\005Hello\022\021\n\004name\030\001 \001(\tH\000\210" +
+      "\001\001\022\014\n\004mail\030\002 \003(\t\022\014\n\004data\030\003 \001(\014B\007\n\005_nameB" +
+      "#\n\023cn.kents.java.protoB\nHelloProtoP\001b\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -42,7 +43,7 @@ public final class HelloProto {
     internal_static_cn_kents_java_proto_Hello_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cn_kents_java_proto_Hello_descriptor,
-        new java.lang.String[] { "Name", "Name", });
+        new java.lang.String[] { "Name", "Mail", "Data", "Name", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

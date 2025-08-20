@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+//生成 proto 文件所在包路径
+package cn.kents.java.proto;
+
+//生成 proto 文件所在包路径
+option java_package = "cn.kents.java.proto";
+
+//生成 proto 文件名
+option java_outer_classname = "QueryUserPlotProto";
+
+//requestId: /userPlot/queryUserPlot
+message QueryUserPlot {
+  repeated Plot plotList = 1;
+}
+
+message Plot {
+  int32 plotId = 1;
+  map<int32, int32> inputResource = 2;
+  bool unlocked = 3;
+}
